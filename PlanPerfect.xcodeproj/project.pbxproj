@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060D108929AB4A1200A23949 /* ShowAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D108829AB4A1200A23949 /* ShowAllViewController.swift */; };
 		06B504E129AABB4C00B34350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B504E029AABB4C00B34350 /* AppDelegate.swift */; };
 		06B504E329AABB4C00B34350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B504E229AABB4C00B34350 /* SceneDelegate.swift */; };
 		06B504E529AABB4C00B34350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B504E429AABB4C00B34350 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060D108829AB4A1200A23949 /* ShowAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewController.swift; sourceTree = "<group>"; };
 		06B504DD29AABB4C00B34350 /* PlanPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B504E029AABB4C00B34350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06B504E229AABB4C00B34350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				06B504E929AABB4F00B34350 /* Assets.xcassets */,
 				06B504EB29AABB4F00B34350 /* LaunchScreen.storyboard */,
 				06B504EE29AABB4F00B34350 /* Info.plist */,
+				060D108829AB4A1200A23949 /* ShowAllViewController.swift */,
 			);
 			path = PlanPerfect;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				06B504E529AABB4C00B34350 /* ViewController.swift in Sources */,
 				06B504E129AABB4C00B34350 /* AppDelegate.swift in Sources */,
 				06B504E329AABB4C00B34350 /* SceneDelegate.swift in Sources */,
+				060D108929AB4A1200A23949 /* ShowAllViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
