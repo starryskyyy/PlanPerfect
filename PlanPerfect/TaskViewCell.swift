@@ -19,18 +19,29 @@ struct TaskViewCell: View {
                     .environmentObject(dateHolder)
                 Text(passedTaskItem.name ?? "")
                     .padding(.horizontal)
-                    .foregroundColor(passedTaskItem.isCompleted() ?  Color(red: 0.55, green: 0.55, blue: 0.57) : Color.white )
+                    .foregroundColor(passedTaskItem.isCompleted() ? Color(red: 0.55, green: 0.55, blue: 0.57) : Color.white)
                 Spacer()
+                if passedTaskItem.isCompleted() {
+                    Text("Completed\n\(passedTaskItem.completeDate!.formatted(date: .abbreviated, time: .shortened))")
+                        .foregroundColor(Color(red: 0.55, green: 0.55, blue: 0.57))
+                        .font(.system(size: 12))
+                        .multilineTextAlignment(.leading)
+                }
             }
-            if passedTaskItem.isCompleted(){
-                Text("Completed\n\(passedTaskItem.completeDate!.formatted(date: .abbreviated, time: .shortened))")
-                    .foregroundColor(Color(red: 0.55, green: 0.55, blue: 0.57))
-                    .font(.system(size: 12))
+            
+            if let desc = passedTaskItem.desc, !desc.isEmpty && !passedTaskItem.isCompleted(){
+                Text(desc)
+                    .padding(.horizontal)
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical)
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 2)
             }
+            Spacer()
         }
+
     }
 }
 

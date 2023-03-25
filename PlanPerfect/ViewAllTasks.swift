@@ -39,33 +39,69 @@ struct ViewAllTasks: View {
     
     var body: some View {
         
-        
-        
         VStack {
             List {
                 ForEach(items) { item in
-                    TaskViewCell(passedTaskItem: item)
-                        .environmentObject(dateHolder)
-                        .swipeActions(allowsFullSwipe: false){
-                            Button("Delete"){
-                                deleteItems(offsets: IndexSet(integer: items.firstIndex(of: item)!))
+                    if !item.isCompleted(){
+                        TaskViewCell(passedTaskItem: item)
+                            .environmentObject(dateHolder)
+                            .swipeActions(allowsFullSwipe: false){
+                                Button("Delete"){
+                                    deleteItems(offsets: IndexSet(integer: items.firstIndex(of: item)!))
+                                }
+                                .lineSpacing(22)
+                                .frame(width: 74, height: 44)
+                                .tint(Color.red)
+                                
+                                Button("Edit"){
+                                    showingSheet.toggle()
+                                }
+                                .lineSpacing(22)
+                                .frame(width: 74, height: 44)
+                                .tint(Color(red: 0.33, green: 0.63, blue: 1))
+                                
+                                
                             }
-                            .lineSpacing(22)
-                            .frame(width: 74, height: 44)
-                            .tint(Color.red)
-                            
-                            Button("Edit"){
-                                showingSheet.toggle()
+                            .foregroundColor(Color.white)
+                            .listRowBackground(Color.black)
+                            .listRowSeparatorTint(Color(red: 38/255, green: 38/255, blue: 38/255))
+                    }
+                }
+                .background(Color.black.edgesIgnoringSafeArea(.all))
+                
+                Text("Completed")
+                    .foregroundColor(Color(red: 0.55, green: 0.55, blue: 0.57))
+                    .listRowBackground(Color.black)
+                    .listRowSeparatorTint(Color.black)
+                    .padding(.top, 25)
+                    .padding(.bottom, 10)
+                    .font(.system(size: 18))
+                
+                ForEach(items) { item in
+                    if item.isCompleted(){
+                        TaskViewCell(passedTaskItem: item)
+                            .environmentObject(dateHolder)
+                            .swipeActions(allowsFullSwipe: false){
+                                Button("Delete"){
+                                    deleteItems(offsets: IndexSet(integer: items.firstIndex(of: item)!))
+                                }
+                                .lineSpacing(22)
+                                .frame(width: 74, height: 44)
+                                .tint(Color.red)
+                                
+                                Button("Edit"){
+                                    showingSheet.toggle()
+                                }
+                                .lineSpacing(22)
+                                .frame(width: 74, height: 44)
+                                .tint(Color(red: 0.33, green: 0.63, blue: 1))
+                                
+                                
                             }
-                            .lineSpacing(22)
-                            .frame(width: 74, height: 44)
-                            .tint(Color(red: 0.33, green: 0.63, blue: 1))
-                            
-                            
-                        }
-                        .foregroundColor(Color.white)
-                        .listRowBackground(Color.black)
-                        .listRowSeparatorTint(Color(red: 38/255, green: 38/255, blue: 38/255))
+                            .foregroundColor(Color.white)
+                            .listRowBackground(Color.black)
+                            .listRowSeparatorTint(Color(red: 38/255, green: 38/255, blue: 38/255))
+                    }
                 }
                 .background(Color.black.edgesIgnoringSafeArea(.all))
             }
@@ -74,7 +110,9 @@ struct ViewAllTasks: View {
             .background(Color.black.edgesIgnoringSafeArea(.all))
             .sheet(isPresented: $showingSheet) {
                 BottomSheetView(passedTaskItem: nil, initialDate: Date()).environmentObject(dateHolder)
+              
             }
+            .padding(.top, 15)
             
             
         }

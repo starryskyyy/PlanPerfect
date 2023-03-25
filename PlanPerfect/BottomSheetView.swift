@@ -120,6 +120,7 @@ struct BottomSheetView: View {
         
         selectedTaskItem?.created = Date()
         selectedTaskItem?.name = name
+        selectedTaskItem?.desc = desc
         selectedTaskItem?.dueDate  = dueDate
         selectedTaskItem?.scheduleDate = scheduleDate
         selectedTaskItem?.scheduleTime = scheduleTime
