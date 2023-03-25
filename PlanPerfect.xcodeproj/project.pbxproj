@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06A1E00929CED12E00699324 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1E00829CED12E00699324 /* DateHolder.swift */; };
 		06D84B0929CEC5F600634554 /* PlanPerfectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B0829CEC5F600634554 /* PlanPerfectApp.swift */; };
 		06D84B0B29CEC5F600634554 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B0A29CEC5F600634554 /* ContentView.swift */; };
 		06D84B0D29CEC5F800634554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D84B0C29CEC5F800634554 /* Assets.xcassets */; };
 		06D84B1029CEC5F800634554 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D84B0F29CEC5F800634554 /* Preview Assets.xcassets */; };
 		06D84B1229CEC5F800634554 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B1129CEC5F800634554 /* Persistence.swift */; };
 		06D84B1529CEC5F800634554 /* PlanPerfect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B1329CEC5F800634554 /* PlanPerfect.xcdatamodeld */; };
+		06D84B1C29CEC72300634554 /* ViewAllTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B1B29CEC72300634554 /* ViewAllTasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06A1E00829CED12E00699324 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
 		06D84B0529CEC5F600634554 /* PlanPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D84B0829CEC5F600634554 /* PlanPerfectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanPerfectApp.swift; sourceTree = "<group>"; };
 		06D84B0A29CEC5F600634554 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +26,7 @@
 		06D84B0F29CEC5F800634554 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		06D84B1129CEC5F800634554 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		06D84B1429CEC5F800634554 /* PlanPerfect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlanPerfect.xcdatamodel; sourceTree = "<group>"; };
+		06D84B1B29CEC72300634554 /* ViewAllTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllTasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				06D84B1129CEC5F800634554 /* Persistence.swift */,
 				06D84B1329CEC5F800634554 /* PlanPerfect.xcdatamodeld */,
 				06D84B0E29CEC5F800634554 /* Preview Content */,
+				06D84B1B29CEC72300634554 /* ViewAllTasks.swift */,
+				06A1E00829CED12E00699324 /* DateHolder.swift */,
 			);
 			path = PlanPerfect;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				06D84B1529CEC5F800634554 /* PlanPerfect.xcdatamodeld in Sources */,
+				06A1E00929CED12E00699324 /* DateHolder.swift in Sources */,
+				06D84B1C29CEC72300634554 /* ViewAllTasks.swift in Sources */,
 				06D84B1229CEC5F800634554 /* Persistence.swift in Sources */,
 				06D84B0B29CEC5F600634554 /* ContentView.swift in Sources */,
 				06D84B0929CEC5F600634554 /* PlanPerfectApp.swift in Sources */,
