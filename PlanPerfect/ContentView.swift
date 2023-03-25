@@ -41,7 +41,7 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .fontWeight(.bold)
                         
-                        Image(systemName: "arrow.right.circle")
+                        Image(systemName: "chevron.right")
                             .padding(.trailing, 8)
                     }
                     
