@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+                                                                                                                                                                                                                                                                                                                                                                                         @main
 struct PlanPerfectApp: App {
     let persistenceController = PersistenceController.shared
 
