@@ -16,6 +16,7 @@ struct BottomSheetView: View {
     @State var name: String
     @State var desc: String
     @State var dueDate: Date
+    @State var dueTime: Date
     @State var scheduleTime: Bool
     @State var scheduleDate: Bool
     
@@ -27,6 +28,7 @@ struct BottomSheetView: View {
             _name = State(initialValue: taskItem.name ?? "")
             _desc = State(initialValue: taskItem.desc ?? "")
             _dueDate = State(initialValue: taskItem.dueDate ?? initialDate)
+            _dueTime = State(initialValue: taskItem.dueTime ?? initialDate)
             _scheduleTime = State(initialValue: taskItem.scheduleTime)
             _scheduleDate = State(initialValue: taskItem.scheduleDate)
             
@@ -35,6 +37,7 @@ struct BottomSheetView: View {
             _name = State(initialValue: "")
             _desc = State(initialValue: "")
             _dueDate = State(initialValue: initialDate)
+            _dueTime = State(initialValue: initialDate)
             _scheduleTime = State(initialValue:false)
             _scheduleDate = State(initialValue:false)
         }
@@ -98,6 +101,17 @@ struct BottomSheetView: View {
             .scrollContentBackground(.hidden)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(#colorLiteral(red: 0.1490196139, green: 0.1490196139, blue: 0.1490196139, alpha: 1)).edgesIgnoringSafeArea(.all))
+            .onAppear {
+                        // assign values of selectedTaskItem to the @State variables
+                        if let taskItem = selectedTaskItem {
+                            name = taskItem.name ?? ""
+                            desc = taskItem.desc ?? ""
+                            dueDate = taskItem.dueDate ?? Date()
+                            dueTime = taskItem.dueTime ?? Date()
+                            scheduleTime = taskItem.scheduleTime
+                            scheduleDate = taskItem.scheduleDate
+                        }
+                    }
         }
     }
 
@@ -113,24 +127,26 @@ struct BottomSheetView: View {
     }
     
     func saveAction(){
-        if selectedTaskItem == nil
+        withAnimation
         {
-            selectedTaskItem = TaskItem(context: viewContext)
+            if selectedTaskItem == nil
+            {
+                selectedTaskItem = TaskItem(context: viewContext)
+            }
+            
+            selectedTaskItem?.created = Date()
+            selectedTaskItem?.name = name
+            selectedTaskItem?.desc = desc
+            selectedTaskItem?.dueDate = dueDate
+            selectedTaskItem?.scheduleTime = scheduleTime
+            selectedTaskItem?.scheduleDate = scheduleDate
+            
+            dateHolder.saveContext(viewContext)
+            self.presentationMode.wrappedValue.dismiss()
         }
         
-        selectedTaskItem?.created = Date()
-        selectedTaskItem?.name = name
-        selectedTaskItem?.desc = desc
-        selectedTaskItem?.dueDate  = dueDate
-        selectedTaskItem?.scheduleDate = scheduleDate
-        selectedTaskItem?.scheduleTime = scheduleTime
-        
-        dateHolder.saveContext(viewContext)
-        
-        self.presentationMode.wrappedValue.dismiss()
-        
     }
-        
+    
     
 }
 
