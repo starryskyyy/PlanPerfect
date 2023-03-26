@@ -32,12 +32,12 @@ struct TaskViewCell: View {
                 else if !passedTaskItem.isCompleted() && (passedTaskItem.scheduleDate || passedTaskItem.scheduleTime){
                     if passedTaskItem.dueTime == nil {
                         Text(passedTaskItem.dueDate!.formatted(date: .abbreviated, time: .omitted))
-                            .foregroundColor(passedTaskItem.overDueColor(color: Color(red: 27/255, green: 209/255, blue: 161/255)))
+                            .foregroundColor(passedTaskItem.overDueColor(color: color))
                             .font(.footnote)
                             .padding(.top, 1)
                     } else {
                         Text(passedTaskItem.dueDate!.formatted(date: .abbreviated, time: passedTaskItem.scheduleTime ? .shortened : .omitted))
-                            .foregroundColor(passedTaskItem.overDueColor(color: Color(red: 27/255, green: 209/255, blue: 161/255)))
+                            .foregroundColor(passedTaskItem.overDueColor(color: color))
                             .font(.footnote)
                             .padding(.top, 1)
                     }
