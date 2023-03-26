@@ -30,7 +30,7 @@ struct ContentView: View {
                     .cornerRadius(9)
                     Spacer() // Add Spacer after the Button
                 }
-                
+                .padding(.bottom, 70)
                 .foregroundColor(Color(red: 27/255, green: 209/255, blue: 161/255))
                 
                 NavigationLink(destination: ViewAllTasks())
@@ -45,15 +45,101 @@ struct ContentView: View {
                             .padding(.trailing, 8)
                     }
                     
+                    .padding(.vertical, 20)
+                    
                 }
                 .padding(.horizontal, 16)
-                .padding(.vertical, 11)
-                .frame(width: 390, height: 53)
+                .frame(width: 390, height: 68)
                 .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                 .contentShape(Rectangle())
                 .cornerRadius(12)
                 .foregroundColor(Color(red: 27/255, green: 209/255, blue: 161/255))
                 
+                HStack {
+                    NavigationLink(destination: ToDoView()) {
+                        HStack {
+                            Text("To Do")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .fontWeight(.bold)
+                            
+                            Image(systemName: "chevron.right")
+                                .padding(.trailing, 8)
+                        }
+                        
+                        .padding(.vertical, 20)
+                        
+                    }
+                    .padding(.horizontal, 16)
+                    .frame(width: 190, height: 68)
+                    .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                    .contentShape(Rectangle())
+                    .cornerRadius(12)
+                    .foregroundColor(Color(red: 0.33, green: 0.63, blue: 1))
+                    
+                    NavigationLink(destination: ViewAllTasks()) {
+                        HStack {
+                            Text("Today")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .fontWeight(.bold)
+                            
+                            Image(systemName: "chevron.right")
+                                .padding(.trailing, 8)
+                        }
+                        
+                        .padding(.vertical, 20)
+                        
+                    }
+                    .padding(.horizontal, 16)
+                    .frame(width: 190, height: 68)
+                    .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                    .contentShape(Rectangle())
+                    .cornerRadius(12)
+                    .foregroundColor(Color(red: 1, green: 0.84, blue: 0.04))
+                }
+                .padding(.top, 20)
+                
+                HStack {
+                    NavigationLink(destination: ViewAllTasks()) {
+                        HStack {
+                            Text("Scheduled")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .fontWeight(.bold)
+                            
+                            Image(systemName: "chevron.right")
+                                .padding(.trailing, 8)
+                        }
+                        
+                        .padding(.vertical, 20)
+                        
+                    }
+                    .padding(.horizontal, 16)
+                    .frame(width: 190, height: 68)
+                    .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                    .contentShape(Rectangle())
+                    .cornerRadius(12)
+                    .foregroundColor(Color(red: 0.97, green: 0.54, blue: 0.98))
+                    
+                    NavigationLink(destination: ViewAllTasks()) {
+                        HStack {
+                            Text("Overdue")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .fontWeight(.bold)
+                            
+                            Image(systemName: "chevron.right")
+                                .padding(.trailing, 8)
+                        }
+                        
+                        .padding(.vertical, 20)
+                        
+                    }
+                    .padding(.horizontal, 16)
+                    .frame(width: 190, height: 68)
+                    .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                    .contentShape(Rectangle())
+                    .cornerRadius(12)
+                    .foregroundColor(Color(red: 1, green: 0.27, blue: 0.23))
+                }
+                .padding(.vertical, 20)
                 
                 Spacer()
             }
