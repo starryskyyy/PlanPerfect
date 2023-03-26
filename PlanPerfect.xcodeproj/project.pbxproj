@@ -12,6 +12,7 @@
 		06C1B00629CF6BF5004B187C /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B00529CF6BF5004B187C /* CheckBox.swift */; };
 		06C1B00929CF6CB9004B187C /* TaskItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B00829CF6CB9004B187C /* TaskItemModel.swift */; };
 		06C1B00B29CF79A8004B187C /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B00A29CF79A8004B187C /* BottomSheetView.swift */; };
+		06C1B00D29CFB839004B187C /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B00C29CFB839004B187C /* ToDoView.swift */; };
 		06D84B0929CEC5F600634554 /* PlanPerfectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B0829CEC5F600634554 /* PlanPerfectApp.swift */; };
 		06D84B0B29CEC5F600634554 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B0A29CEC5F600634554 /* ContentView.swift */; };
 		06D84B0D29CEC5F800634554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D84B0C29CEC5F800634554 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		06C1B00529CF6BF5004B187C /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		06C1B00829CF6CB9004B187C /* TaskItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemModel.swift; sourceTree = "<group>"; };
 		06C1B00A29CF79A8004B187C /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		06C1B00C29CFB839004B187C /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		06D84B0529CEC5F600634554 /* PlanPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D84B0829CEC5F600634554 /* PlanPerfectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanPerfectApp.swift; sourceTree = "<group>"; };
 		06D84B0A29CEC5F600634554 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				06C1B00329CF6B26004B187C /* TaskViewCell.swift */,
 				06C1B00529CF6BF5004B187C /* CheckBox.swift */,
 				06C1B00A29CF79A8004B187C /* BottomSheetView.swift */,
+				06C1B00C29CFB839004B187C /* ToDoView.swift */,
 			);
 			path = PlanPerfect;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C1B00D29CFB839004B187C /* ToDoView.swift in Sources */,
 				06C1B00629CF6BF5004B187C /* CheckBox.swift in Sources */,
 				06C1B00B29CF79A8004B187C /* BottomSheetView.swift in Sources */,
 				06D84B1529CEC5F800634554 /* PlanPerfect.xcdatamodeld in Sources */,
