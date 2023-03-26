@@ -9,8 +9,10 @@ import SwiftUI
 
 struct TaskViewCell: View {
     
+    
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var passedTaskItem: TaskItem
+    
     var color: Color
     
     var body: some View {
@@ -30,7 +32,7 @@ struct TaskViewCell: View {
                         .multilineTextAlignment(.leading)
                 }
                 else if !passedTaskItem.isCompleted() && (passedTaskItem.scheduleDate || passedTaskItem.scheduleTime){
-                    if passedTaskItem.dueTime == nil {
+                    if !passedTaskItem.scheduleTime {
                         Text(passedTaskItem.dueDate!.formatted(date: .abbreviated, time: .omitted))
                             .foregroundColor(passedTaskItem.overDueColor(color: color))
                             .font(.footnote)
