@@ -76,7 +76,7 @@ struct ContentView: View {
                     .cornerRadius(12)
                     .foregroundColor(Color(red: 0.33, green: 0.63, blue: 1))
                     
-                    NavigationLink(destination: ViewAllTasks()) {
+                    NavigationLink(destination: TodayTaskView()) {
                         HStack {
                             Text("Today")
                                 .frame(maxWidth: .infinity, alignment: .leading)
