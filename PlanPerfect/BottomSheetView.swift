@@ -13,20 +13,15 @@ struct BottomSheetView: View {
     @EnvironmentObject var dateHolder: DateHolder
     
     @State var selectedTaskItem: TaskItem?
-    @State var name: String
-    @State var desc: String
-    @State var dueDate: Date
-    @State var scheduleTime: Bool
-    @State var scheduleDate: Bool
+    @State var name: String = ""
+    @State var desc: String = ""
+    @State var dueDate: Date = Date()
+    @State var scheduleTime: Bool = false
+    @State var scheduleDate: Bool = false
     
     init(passedTaskItem: TaskItem?, initialDate: Date) {
-        _selectedTaskItem = State(initialValue: passedTaskItem)
-        _name = State(initialValue: passedTaskItem?.name ?? "")
-        _desc = State(initialValue: passedTaskItem?.desc ?? "")
-        _dueDate = State(initialValue: passedTaskItem?.dueDate ?? initialDate)
-        _scheduleTime = State(initialValue: passedTaskItem?.scheduleTime ?? false)
-        _scheduleDate = State(initialValue: passedTaskItem?.scheduleDate ?? false)
-    }
+           _selectedTaskItem = State(initialValue: passedTaskItem)
+       }
 
     
     
@@ -89,6 +84,15 @@ struct BottomSheetView: View {
             .scrollContentBackground(.hidden)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(#colorLiteral(red: 0.1490196139, green: 0.1490196139, blue: 0.1490196139, alpha: 1)).edgesIgnoringSafeArea(.all))
+            .onAppear {
+                            if let item = selectedTaskItem {
+                                name = item.name ?? ""
+                                desc = item.desc ?? ""
+                                dueDate = item.dueDate ?? Date()
+                                scheduleTime = item.scheduleTime
+                                scheduleDate = item.scheduleDate
+                            }
+                        }
             
             
         }

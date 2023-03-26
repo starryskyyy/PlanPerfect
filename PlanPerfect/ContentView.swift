@@ -16,7 +16,6 @@ struct ContentView: View {
     @EnvironmentObject var dateHolder: DateHolder
     @FetchRequest(entity: TaskItem.entity(), sortDescriptors: []) var items: FetchedResults<TaskItem>
     
-    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -54,7 +53,7 @@ struct ContentView: View {
                     
                 }
                 .padding(.horizontal, 16)
-                .frame(width: 390, height: 68)
+                .frame(width: 390, height: 65)
                 .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                 .contentShape(Rectangle())
                 .cornerRadius(12)
@@ -78,7 +77,7 @@ struct ContentView: View {
                         
                     }
                     .padding(.horizontal, 16)
-                    .frame(width: 190, height: 68)
+                    .frame(width: 190, height: 65)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
@@ -96,17 +95,17 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         
-                        .padding(.vertical, 20)
+                        .padding(.vertical, 15)
                         
                     }
                     .padding(.horizontal, 16)
-                    .frame(width: 190, height: 68)
+                    .frame(width: 190, height: 65)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
                     .foregroundColor(Color(red: 1, green: 0.84, blue: 0.04))
                 }
-                .padding(.top, 20)
+                .padding(.top, 15)
                 
                 HStack {
                     NavigationLink(destination: ScheduleTaskView()) {
@@ -121,11 +120,11 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         
-                        .padding(.vertical, 20)
+                        .padding(.vertical, 15)
                         
                     }
                     .padding(.horizontal, 16)
-                    .frame(width: 190, height: 68)
+                    .frame(width: 190, height: 65)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
@@ -143,17 +142,17 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         
-                        .padding(.vertical, 20)
+                        .padding(.vertical, 15)
                         
                     }
                     .padding(.horizontal, 16)
-                    .frame(width: 190, height: 68)
+                    .frame(width: 190, height: 65)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
                     .foregroundColor(Color(red: 1, green: 0.27, blue: 0.23))
                 }
-                .padding(.vertical, 20)
+                .padding(.vertical, 15)
                 
                 Spacer()
             }
