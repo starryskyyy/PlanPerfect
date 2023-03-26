@@ -2,7 +2,7 @@
 //  CheckBox.swift
 //  PlanPerfect
 //
-//  Created by Danesh Zhao-Graham on 2023-03-25.
+//  Created by Elizaveta Vygovskaia on 2023-03-25.
 //
 
 import SwiftUI
