@@ -14,6 +14,8 @@
 		06C1B00B29CF79A8004B187C /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B00A29CF79A8004B187C /* BottomSheetView.swift */; };
 		06C1B00D29CFB839004B187C /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B00C29CFB839004B187C /* ToDoView.swift */; };
 		06C1B01329D01AD1004B187C /* TodayTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B01229D01AD1004B187C /* TodayTaskView.swift */; };
+		06C1B01529D02C92004B187C /* ScheduleTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B01429D02C92004B187C /* ScheduleTaskView.swift */; };
+		06C1B01729D02E36004B187C /* OverdueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1B01629D02E36004B187C /* OverdueView.swift */; };
 		06D84B0929CEC5F600634554 /* PlanPerfectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B0829CEC5F600634554 /* PlanPerfectApp.swift */; };
 		06D84B0B29CEC5F600634554 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D84B0A29CEC5F600634554 /* ContentView.swift */; };
 		06D84B0D29CEC5F800634554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D84B0C29CEC5F800634554 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		06C1B00A29CF79A8004B187C /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		06C1B00C29CFB839004B187C /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		06C1B01229D01AD1004B187C /* TodayTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTaskView.swift; sourceTree = "<group>"; };
+		06C1B01429D02C92004B187C /* ScheduleTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTaskView.swift; sourceTree = "<group>"; };
+		06C1B01629D02E36004B187C /* OverdueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverdueView.swift; sourceTree = "<group>"; };
 		06D84B0529CEC5F600634554 /* PlanPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D84B0829CEC5F600634554 /* PlanPerfectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanPerfectApp.swift; sourceTree = "<group>"; };
 		06D84B0A29CEC5F600634554 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				06C1B00A29CF79A8004B187C /* BottomSheetView.swift */,
 				06C1B00C29CFB839004B187C /* ToDoView.swift */,
 				06C1B01229D01AD1004B187C /* TodayTaskView.swift */,
+				06C1B01429D02C92004B187C /* ScheduleTaskView.swift */,
+				06C1B01629D02E36004B187C /* OverdueView.swift */,
 			);
 			path = PlanPerfect;
 			sourceTree = "<group>";
@@ -178,11 +184,13 @@
 				06C1B00D29CFB839004B187C /* ToDoView.swift in Sources */,
 				06C1B00629CF6BF5004B187C /* CheckBox.swift in Sources */,
 				06C1B00B29CF79A8004B187C /* BottomSheetView.swift in Sources */,
+				06C1B01529D02C92004B187C /* ScheduleTaskView.swift in Sources */,
 				06D84B1529CEC5F800634554 /* PlanPerfect.xcdatamodeld in Sources */,
 				06C1B00429CF6B26004B187C /* TaskViewCell.swift in Sources */,
 				06C1B01329D01AD1004B187C /* TodayTaskView.swift in Sources */,
 				06A1E00929CED12E00699324 /* DateHolder.swift in Sources */,
 				06D84B1C29CEC72300634554 /* ViewAllTasks.swift in Sources */,
+				06C1B01729D02E36004B187C /* OverdueView.swift in Sources */,
 				06D84B1229CEC5F800634554 /* Persistence.swift in Sources */,
 				06C1B00929CF6CB9004B187C /* TaskItemModel.swift in Sources */,
 				06D84B0B29CEC5F600634554 /* ContentView.swift in Sources */,
