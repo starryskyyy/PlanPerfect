@@ -99,7 +99,7 @@ struct ContentView: View {
                 .padding(.top, 20)
                 
                 HStack {
-                    NavigationLink(destination: ViewAllTasks()) {
+                    NavigationLink(destination: ScheduleTaskView()) {
                         HStack {
                             Text("Scheduled")
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -119,7 +119,7 @@ struct ContentView: View {
                     .cornerRadius(12)
                     .foregroundColor(Color(red: 0.97, green: 0.54, blue: 0.98))
                     
-                    NavigationLink(destination: ViewAllTasks()) {
+                    NavigationLink(destination: OverdueView()) {
                         HStack {
                             Text("Overdue")
                                 .frame(maxWidth: .infinity, alignment: .leading)
