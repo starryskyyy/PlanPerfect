@@ -11,8 +11,11 @@ import CoreData
 
 
 struct ContentView: View {
+    
     @State var showingSheet = false
     @EnvironmentObject var dateHolder: DateHolder
+    @FetchRequest(entity: TaskItem.entity(), sortDescriptors: []) var items: FetchedResults<TaskItem>
+    
     
     var body: some View {
         NavigationView {
@@ -41,8 +44,10 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .fontWeight(.bold)
                         
-                        Image(systemName: "chevron.right")
-                            .padding(.trailing, 8)
+                        Text(String(items.count))
+                            .fontWeight(.bold)
+                            .font(.system(size: 22))
+                            .foregroundColor(.white)
                     }
                     
                     .padding(.vertical, 20)
@@ -54,6 +59,7 @@ struct ContentView: View {
                 .contentShape(Rectangle())
                 .cornerRadius(12)
                 .foregroundColor(Color(red: 27/255, green: 209/255, blue: 161/255))
+               
                 
                 HStack {
                     NavigationLink(destination: ToDoView()) {
@@ -62,8 +68,10 @@ struct ContentView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .fontWeight(.bold)
                             
-                            Image(systemName: "chevron.right")
-                                .padding(.trailing, 8)
+                            Text(String(items.filter { !$0.isCompleted() }.count))
+                                .fontWeight(.bold)
+                                .font(.system(size: 22))
+                                .foregroundColor(.white)
                         }
                         
                         .padding(.vertical, 20)
@@ -82,8 +90,10 @@ struct ContentView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .fontWeight(.bold)
                             
-                            Image(systemName: "chevron.right")
-                                .padding(.trailing, 8)
+                            Text(String(items.filter { $0.isDueToday() }.count))
+                                .fontWeight(.bold)
+                                .font(.system(size: 22))
+                                .foregroundColor(.white)
                         }
                         
                         .padding(.vertical, 20)
@@ -105,8 +115,10 @@ struct ContentView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .fontWeight(.bold)
                             
-                            Image(systemName: "chevron.right")
-                                .padding(.trailing, 8)
+                            Text(String(items.filter { $0.isScheduled() }.count))
+                                .fontWeight(.bold)
+                                .font(.system(size: 22))
+                                .foregroundColor(.white)
                         }
                         
                         .padding(.vertical, 20)
@@ -125,8 +137,10 @@ struct ContentView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .fontWeight(.bold)
                             
-                            Image(systemName: "chevron.right")
-                                .padding(.trailing, 8)
+                            Text(String(items.filter { $0.isOverdue() }.count))
+                                .fontWeight(.bold)
+                                .font(.system(size: 22))
+                                .foregroundColor(.white)
                         }
                         
                         .padding(.vertical, 20)
