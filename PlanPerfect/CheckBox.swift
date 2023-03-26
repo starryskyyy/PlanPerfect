@@ -11,11 +11,12 @@ struct CheckBox: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var passedTaskItem: TaskItem
+    var color: Color
     
     var body: some View {
         Image(systemName: passedTaskItem.isCompleted() ? "circle.inset.filled" : "circle")
             .foregroundColor(passedTaskItem.isCompleted() ?  Color(red: 0.55, green: 0.55, blue: 0.57)
- : Color(red: 27/255, green: 209/255, blue: 161/255) )
+ : color)
             .onTapGesture{
                 withAnimation{
                     if !passedTaskItem.isCompleted(){
@@ -34,6 +35,6 @@ struct CheckBox: View {
 
 struct CheckBox_Previews: PreviewProvider {
     static var previews: some View {
-        CheckBox(passedTaskItem:   TaskItem())
+        CheckBox(passedTaskItem:   TaskItem(), color: .blue)
     }
 }
