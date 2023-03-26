@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ViewAllTasks: View {
+    @State var selectedItem: TaskItem?
     @State var showingSheet = false
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dateHolder: DateHolder
@@ -43,7 +44,7 @@ struct ViewAllTasks: View {
             List {
                 ForEach(items) { item in
                     if !item.isCompleted(){
-                        TaskViewCell(passedTaskItem: item)
+                        TaskViewCell(passedTaskItem: item, color: Color(red: 27/255, green: 209/255, blue: 161/255))
                             .environmentObject(dateHolder)
                             .swipeActions(allowsFullSwipe: false){
                                 Button("Delete"){
@@ -54,6 +55,7 @@ struct ViewAllTasks: View {
                                 .tint(Color.red)
                                 
                                 Button("Edit"){
+                                    selectedItem = item
                                     showingSheet.toggle()
                                 }
                                 .lineSpacing(22)
@@ -79,7 +81,7 @@ struct ViewAllTasks: View {
                 
                 ForEach(items) { item in
                     if item.isCompleted(){
-                        TaskViewCell(passedTaskItem: item)
+                        TaskViewCell(passedTaskItem: item, color:Color(red: 0.55, green: 0.55, blue: 0.57))
                             .environmentObject(dateHolder)
                             .swipeActions(allowsFullSwipe: false){
                                 Button("Delete"){
@@ -90,6 +92,7 @@ struct ViewAllTasks: View {
                                 .tint(Color.red)
                                 
                                 Button("Edit"){
+                                    selectedItem = item
                                     showingSheet.toggle()
                                 }
                                 .lineSpacing(22)
@@ -109,12 +112,10 @@ struct ViewAllTasks: View {
             .foregroundColor(Color.white)
             .background(Color.black.edgesIgnoringSafeArea(.all))
             .sheet(isPresented: $showingSheet) {
-                BottomSheetView(passedTaskItem: nil, initialDate: Date()).environmentObject(dateHolder)
-              
+                BottomSheetView(passedTaskItem: selectedItem, initialDate: Date())
+                    .environmentObject(dateHolder)
             }
             .padding(.top, 15)
-            
-            
         }
         .navigationBarTitle("All")
         .navigationBarTitleDisplayMode(.inline)
@@ -131,20 +132,11 @@ struct ViewAllTasks: View {
             dateHolder.saveContext(viewContext)
         }
     }
-    
-    
-    private let itemFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .medium
-        return formatter
-    }()
-    
-    
+}
     struct ViewAllTasks_Previews: PreviewProvider {
         static var previews: some View {
             ViewAllTasks()
         }
     }
     
-}
+
