@@ -31,12 +31,7 @@ struct ViewAllTasks: View {
         }
     }
     }
-    
-    init() {
-        let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 27/255, green: 209/255, blue: 161/255, alpha: 1.0)]
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(red: 27/255, green: 209/255, blue: 161/255, alpha: 1.0)]
-    }
+  
     
     var body: some View {
         
@@ -122,6 +117,15 @@ struct ViewAllTasks: View {
         .background(Color.black.edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
+        .onAppear(perform: {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 27/255, green: 209/255, blue: 161/255, alpha: 1.0)]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: 27/255, green: 209/255, blue: 161/255, alpha: 1.0)]
+
+        })
+        .onDisappear(perform: {
+            UINavigationBar.appearance().largeTitleTextAttributes = nil
+            UINavigationBar.appearance().titleTextAttributes = nil
+        })
         
     }
     
@@ -132,6 +136,12 @@ struct ViewAllTasks: View {
             dateHolder.saveContext(viewContext)
         }
     }
+    
+    func updateNavigationBarColor() {
+            
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 27/255, green: 209/255, blue: 161/255, alpha: 1.0)]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: 27/255, green: 209/255, blue: 161/255, alpha: 1.0)]
+        }
 }
     struct ViewAllTasks_Previews: PreviewProvider {
         static var previews: some View {
