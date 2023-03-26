@@ -26,11 +26,9 @@ extension TaskItem
         return isOverdue() ? Color(red: 1, green: 0.27, blue: 0.23) : color
     }
     
-    func isDueToday() -> Bool{
-        
-        if let due = dueDate{
-            let today = Calendar.current.startOfDay(for: Date())
-            return due == today
+    func isDueToday() -> Bool {
+        if let due = dueDate {
+            return Calendar.current.isDateInToday(due)
         }
         return false
     }
