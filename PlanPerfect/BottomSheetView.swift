@@ -16,7 +16,6 @@ struct BottomSheetView: View {
     @State var name: String
     @State var desc: String
     @State var dueDate: Date
-    @State var dueTime: Date
     @State var scheduleTime: Bool
     @State var scheduleDate: Bool
     
@@ -28,7 +27,6 @@ struct BottomSheetView: View {
             _name = State(initialValue: taskItem.name ?? "")
             _desc = State(initialValue: taskItem.desc ?? "")
             _dueDate = State(initialValue: taskItem.dueDate ?? initialDate)
-            _dueTime = State(initialValue: taskItem.dueTime ?? initialDate)
             _scheduleTime = State(initialValue: taskItem.scheduleTime)
             _scheduleDate = State(initialValue: taskItem.scheduleDate)
             
@@ -37,7 +35,6 @@ struct BottomSheetView: View {
             _name = State(initialValue: "")
             _desc = State(initialValue: "")
             _dueDate = State(initialValue: initialDate)
-            _dueTime = State(initialValue: initialDate)
             _scheduleTime = State(initialValue:false)
             _scheduleDate = State(initialValue:false)
         }
@@ -107,7 +104,6 @@ struct BottomSheetView: View {
                             name = taskItem.name ?? ""
                             desc = taskItem.desc ?? ""
                             dueDate = taskItem.dueDate ?? Date()
-                            dueTime = taskItem.dueTime ?? Date()
                             scheduleTime = taskItem.scheduleTime
                             scheduleDate = taskItem.scheduleDate
                         }
