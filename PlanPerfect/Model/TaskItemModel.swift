@@ -13,14 +13,23 @@ extension TaskItem
         return completeDate != nil
     }
     
-    func isOverdue() -> Bool{
-        if let due = dueDate {
-                let today = Calendar.current.startOfDay(for: Date())
-                let isPastDueDate = !isCompleted() && (scheduleDate || scheduleTime) && due < today
-                return isPastDueDate && due != today
+    func isOverdue() -> Bool {
+        guard let dueDate = dueDate else { return false }
+        let currentDate = Date()
+        let calendar = Calendar.current
+        
+        if !isCompleted() && (scheduleDate || scheduleTime) {
+            if calendar.isDateInToday(dueDate) {
+                if !scheduleTime { return false }
+                return currentDate > dueDate
+            } else {
+                return dueDate < currentDate
             }
-            return false
+        }
+        return false
     }
+
+
     
     func overDueColor(color: Color) -> Color{
         return isOverdue() ? Color(red: 1, green: 0.27, blue: 0.23) : color
@@ -28,8 +37,12 @@ extension TaskItem
     
     func isDueToday() -> Bool {
         if let due = dueDate {
-            return Calendar.current.isDateInToday(due)
+            return Calendar.current.isDateInToday(due) && !isCompleted() && scheduleDate
         }
         return false
+    }
+    
+    func isScheduled() -> Bool{
+        return !isOverdue() && !isCompleted()
     }
 }
