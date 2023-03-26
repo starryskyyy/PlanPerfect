@@ -6,6 +6,7 @@
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dueTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="list" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="scheduleDate" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="scheduleTime" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
