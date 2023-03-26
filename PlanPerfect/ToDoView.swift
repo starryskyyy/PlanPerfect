@@ -32,16 +32,10 @@ struct ToDoView: View {
     }
     }
     
-    init() {
-            let navBarAppearance = UINavigationBar.appearance()
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.33, green: 0.63, blue: 1, alpha: 1.0)]
-            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(red: 0.33, green: 0.63, blue: 1, alpha: 1.0)]
-            
-            // Remove background color
-            navBarAppearance.barTintColor = .clear
-        }
+  
     
     var body: some View {
+       
         
         VStack {
             List {
@@ -89,6 +83,15 @@ struct ToDoView: View {
         .background(Color.black.edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
+        .onAppear(perform: {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.33, green: 0.63, blue: 1, alpha: 1.0)]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: 0.33, green: 0.63, blue: 1, alpha: 1.0)]
+
+        })
+        .onDisappear(perform: {
+            UINavigationBar.appearance().largeTitleTextAttributes = nil
+            UINavigationBar.appearance().titleTextAttributes = nil
+        })
         
     }
     
@@ -99,6 +102,7 @@ struct ToDoView: View {
             dateHolder.saveContext(viewContext)
         }
     }
+  
 }
 
 struct ToDoView_Previews: PreviewProvider {
