@@ -46,7 +46,8 @@ extension TaskItem
         return !isOverdue() && !isCompleted()
     }
     
-    func isWork() -> Bool{
-        return category == "Work"
+    func isCategory(selectedCategory: String) -> Bool{
+        return category == selectedCategory
     }
+    
 }

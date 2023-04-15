@@ -30,7 +30,7 @@ struct ContentView: View {
                     .padding(.vertical)
                     .background(Color(red: 0.02, green: 0.20, blue: 0.15, opacity: 0.50))
                     .cornerRadius(9)
-                    Spacer() // Add Spacer after the Button
+                    Spacer() 
                 }
                 .padding(.bottom, 35)
                 .foregroundColor(Color(red: 27/255, green: 209/255, blue: 161/255))
@@ -167,7 +167,7 @@ struct ContentView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .fontWeight(.bold)
                                 
-                                Text(String(items.filter { $0.isScheduled() }.count))
+                                Text(String(items.filter { $0.isCategory(selectedCategory: "Work") }.count))
                                     .fontWeight(.bold)
                                     .font(.system(size: 22))
                                     .foregroundColor(.white)
@@ -181,15 +181,15 @@ struct ContentView: View {
                         .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                         .contentShape(Rectangle())
                         .cornerRadius(12)
-                        .foregroundColor(Color(red: 1, green: 0.76, blue: 0))
+                        .foregroundColor(Color(red: 1, green: 0.55, blue: 0))
                         
-                        NavigationLink(destination: OverdueView()) {
+                        NavigationLink(destination: SchoolView()) {
                             HStack {
                                 Text("School")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .fontWeight(.bold)
                                 
-                                Text(String(items.filter { $0.isWork() }.count))
+                                Text(String(items.filter { $0.isCategory(selectedCategory: "School") }.count))
                                     .fontWeight(.bold)
                                     .font(.system(size: 22))
                                     .foregroundColor(.white)
@@ -207,13 +207,13 @@ struct ContentView: View {
                     }
                     .padding(.vertical, 10)
                     HStack {
-                        NavigationLink(destination: ScheduleTaskView()) {
+                        NavigationLink(destination: ShoppingView()) {
                             HStack {
                                 Text("Shopping")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .fontWeight(.bold)
                                 
-                                Text(String(items.filter { $0.isScheduled() }.count))
+                                Text(String(items.filter { $0.isCategory(selectedCategory: "Shopping") }.count))
                                     .fontWeight(.bold)
                                     .font(.system(size: 22))
                                     .foregroundColor(.white)
@@ -229,13 +229,13 @@ struct ContentView: View {
                         .cornerRadius(12)
                         .foregroundColor(Color(red: 0.61, green: 0.31, blue: 0.87))
                         
-                        NavigationLink(destination: OverdueView()) {
+                        NavigationLink(destination: SocialView()) {
                             HStack {
                                 Text("Social")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .fontWeight(.bold)
                                 
-                                Text(String(items.filter { $0.isOverdue() }.count))
+                                Text(String(items.filter { $0.isCategory(selectedCategory: "Social") }.count))
                                     .fontWeight(.bold)
                                     .font(.system(size: 22))
                                     .foregroundColor(.white)

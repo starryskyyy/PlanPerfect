@@ -77,7 +77,7 @@ struct BottomSheetView: View {
                 
                 Section(header: Text("Category")) {
                     Picker("Select", selection: $category) {
-                        Text("").tag("")
+                        Text("Not Selected").tag("Not Selected")
                         Text("Work").tag("Work")
                         Text("School").tag("School")
                         Text("Shopping").tag("Shopping")

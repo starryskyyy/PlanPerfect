@@ -1,13 +1,14 @@
 //
-//  WorkView.swift
+//  SocialView.swift
 //  PlanPerfect
 //
-//  Created by Elizaveta Vygovskaia on 2023-04-15.
+//  Created by Danesh Zhao-Graham on 2023-04-15.
 //
+
 
 import SwiftUI
 
-struct WorkView: View {
+struct SocialView: View {
     
     @State private var deletionIndexSet: IndexSet?
     @State private var showingAlert = false
@@ -29,9 +30,9 @@ struct WorkView: View {
         self.presentationMode.wrappedValue.dismiss()
     }) {
         HStack {
-            Image(systemName: "chevron.backward") 
+            Image(systemName: "chevron.backward")
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(Color(red: 1, green: 0.55, blue: 0))
+                .foregroundColor(Color(red: 0.61, green: 0.92, blue: 0.94))
         }
     }
     }
@@ -42,8 +43,8 @@ struct WorkView: View {
         VStack {
             List {
                 ForEach(items) { item in
-                    if item.isCategory(selectedCategory: "Work"){
-                        TaskViewCell(passedTaskItem: item, color: Color(red: 1, green: 0.55, blue: 0))
+                    if item.isCategory(selectedCategory: "Social"){
+                        TaskViewCell(passedTaskItem: item, color: Color(red: 0.61, green: 0.92, blue: 0.94))
                             .environmentObject(dateHolder)
                             .swipeActions(allowsFullSwipe: false){
                                 Button("Delete"){
@@ -92,14 +93,14 @@ struct WorkView: View {
             }
             .padding(.top, 15)
         }
-        .navigationBarTitle("Work")
+        .navigationBarTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.black.edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
         .onAppear(perform: {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 1, green: 0.76, blue: 0, alpha: 1.0)]
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: 1, green: 0.76, blue: 0, alpha: 1.0)]
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.61, green: 0.92, blue: 0.94, alpha: 1.0)]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: 0.61, green: 0.92, blue: 0.94, alpha: 1.0)]
 
         })
         .onDisappear(perform: {
@@ -127,8 +128,8 @@ struct WorkView: View {
   
 }
 
-struct WorkView_Previews: PreviewProvider {
+struct SocialView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkView()
+        SocialView()
     }
 }

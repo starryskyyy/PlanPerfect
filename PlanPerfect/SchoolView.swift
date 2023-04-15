@@ -1,13 +1,13 @@
 //
-//  WorkView.swift
+//  SchoolView.swift
 //  PlanPerfect
 //
-//  Created by Elizaveta Vygovskaia on 2023-04-15.
+//  Created by Danesh Zhao-Graham on 2023-04-15.
 //
 
 import SwiftUI
 
-struct WorkView: View {
+struct SchoolView: View {
     
     @State private var deletionIndexSet: IndexSet?
     @State private var showingAlert = false
@@ -29,21 +29,19 @@ struct WorkView: View {
         self.presentationMode.wrappedValue.dismiss()
     }) {
         HStack {
-            Image(systemName: "chevron.backward") 
+            Image(systemName: "chevron.backward")
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(Color(red: 1, green: 0.55, blue: 0))
+                .foregroundColor(Color(red: 0.66, green: 0.8, blue: 0))
         }
+     }
     }
-    }
-    
-  
     
     var body: some View {
         VStack {
             List {
                 ForEach(items) { item in
-                    if item.isCategory(selectedCategory: "Work"){
-                        TaskViewCell(passedTaskItem: item, color: Color(red: 1, green: 0.55, blue: 0))
+                    if item.isCategory(selectedCategory: "School"){
+                        TaskViewCell(passedTaskItem: item, color: Color(red: 0.66, green: 0.8, blue: 0))
                             .environmentObject(dateHolder)
                             .swipeActions(allowsFullSwipe: false){
                                 Button("Delete"){
@@ -60,8 +58,6 @@ struct WorkView: View {
                                 .lineSpacing(22)
                                 .frame(width: 74, height: 44)
                                 .tint(Color(red: 0.33, green: 0.63, blue: 1))
-                                
-                                
                             }
                             .foregroundColor(Color.white)
                             .listRowBackground(Color.black)
@@ -92,14 +88,14 @@ struct WorkView: View {
             }
             .padding(.top, 15)
         }
-        .navigationBarTitle("Work")
+        .navigationBarTitle("School")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.black.edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
         .onAppear(perform: {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 1, green: 0.76, blue: 0, alpha: 1.0)]
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: 1, green: 0.76, blue: 0, alpha: 1.0)]
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.66, green: 0.8, blue: 0, alpha: 1.0)]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: 0.66, green: 0.8, blue: 0, alpha: 1.0)]
 
         })
         .onDisappear(perform: {
@@ -127,8 +123,8 @@ struct WorkView: View {
   
 }
 
-struct WorkView_Previews: PreviewProvider {
+struct SchoolView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkView()
+        SchoolView()
     }
 }
