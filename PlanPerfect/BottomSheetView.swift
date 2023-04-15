@@ -12,12 +12,15 @@ struct BottomSheetView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var dateHolder: DateHolder
     
+    
     @State var selectedTaskItem: TaskItem?
     @State var name: String = ""
     @State var desc: String = ""
     @State var dueDate: Date = Date()
     @State var scheduleTime: Bool = false
     @State var scheduleDate: Bool = false
+    @State var selectedCategory: String = ""
+
     
     init(passedTaskItem: TaskItem?, initialDate: Date) {
            _selectedTaskItem = State(initialValue: passedTaskItem)
@@ -71,6 +74,26 @@ struct BottomSheetView: View {
                 }
                 .foregroundColor(Color(red: 0.553, green: 0.553, blue: 0.573))
                 .listRowBackground(Color(red: 0.25, green: 0.25, blue: 0.25))
+                
+                Section(header: Text("Category")) {
+                    Picker("Select", selection: $selectedCategory) {
+                        Text("").tag("")
+                        Text("Work").tag("Work")
+                        Text("School").tag("School")
+                        Text("Family").tag("Family")
+                        Text("Friends").tag("Friends")
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .foregroundColor(Color(red: 0.553, green: 0.553, blue: 0.573))
+                    .accentColor(Color.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 11)
+                    .frame(width: 337, height: 53)
+                    .background(Color(red: 0.25, green: 0.25, blue: 0.25))
+                    .cornerRadius(12)
+                }
+                .foregroundColor(Color(red: 0.553, green: 0.553, blue: 0.573))
+                .listRowBackground(Color(#colorLiteral(red: 0.1490196139, green: 0.1490196139, blue: 0.1490196139, alpha: 1)))
                 
             }
             .navigationBarItems(trailing:

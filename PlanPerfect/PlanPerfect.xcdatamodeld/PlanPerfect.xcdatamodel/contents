@@ -5,12 +5,12 @@
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="TaskItem" representedClassName="TaskItem" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="completeDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dueTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="list" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="scheduleDate" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="scheduleTime" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
