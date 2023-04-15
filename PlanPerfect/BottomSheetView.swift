@@ -19,7 +19,7 @@ struct BottomSheetView: View {
     @State var dueDate: Date = Date()
     @State var scheduleTime: Bool = false
     @State var scheduleDate: Bool = false
-    @State var selectedCategory: String = ""
+    @State var category: String = ""
 
     
     init(passedTaskItem: TaskItem?, initialDate: Date) {
@@ -76,7 +76,7 @@ struct BottomSheetView: View {
                 .listRowBackground(Color(red: 0.25, green: 0.25, blue: 0.25))
                 
                 Section(header: Text("Category")) {
-                    Picker("Select", selection: $selectedCategory) {
+                    Picker("Select", selection: $category) {
                         Text("").tag("")
                         Text("Work").tag("Work")
                         Text("School").tag("School")
@@ -114,6 +114,7 @@ struct BottomSheetView: View {
                                 dueDate = item.dueDate ?? Date()
                                 scheduleTime = item.scheduleTime
                                 scheduleDate = item.scheduleDate
+                                category = item.category ?? ""
                             }
                         }
             
@@ -146,9 +147,13 @@ struct BottomSheetView: View {
             selectedTaskItem?.dueDate = dueDate
             selectedTaskItem?.scheduleTime = scheduleTime
             selectedTaskItem?.scheduleDate = scheduleDate
+            selectedTaskItem?.category = category
             
+            print("Category saved: \(category)")
+
             dateHolder.saveContext(viewContext)
             self.presentationMode.wrappedValue.dismiss()
+
         }
         
     }
