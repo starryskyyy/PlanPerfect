@@ -19,20 +19,20 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                HStack(alignment: .top) { // Add alignment to leading
+                HStack(alignment: .top) {
                     Button("New Task") {
                         showingSheet.toggle()
                     }
                     .fontWeight(.bold)
                     .font(.body)
                     .multilineTextAlignment(.center)
-                    .frame(width: 100, height: 15)
+                    .frame(width: 150, height: 12)
                     .padding(.vertical)
                     .background(Color(red: 0.02, green: 0.20, blue: 0.15, opacity: 0.50))
                     .cornerRadius(9)
                     Spacer() // Add Spacer after the Button
                 }
-                .padding(.bottom, 70)
+                .padding(.bottom, 35)
                 .foregroundColor(Color(red: 27/255, green: 209/255, blue: 161/255))
                 
                 NavigationLink(destination: ViewAllTasks())
@@ -49,11 +49,11 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                     
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 15)
                     
                 }
-                .padding(.horizontal, 16)
-                .frame(width: 390, height: 65)
+                .padding(.horizontal, 8)
+                .frame(width: 390, height: 55)
                 .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                 .contentShape(Rectangle())
                 .cornerRadius(12)
@@ -73,11 +73,11 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         
-                        .padding(.vertical, 20)
+                        .padding(.vertical, 15)
                         
                     }
-                    .padding(.horizontal, 16)
-                    .frame(width: 190, height: 65)
+                    .padding(.horizontal, 8)
+                    .frame(width: 190, height: 55)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
@@ -98,14 +98,14 @@ struct ContentView: View {
                         .padding(.vertical, 15)
                         
                     }
-                    .padding(.horizontal, 16)
-                    .frame(width: 190, height: 65)
+                    .padding(.horizontal, 8)
+                    .frame(width: 190, height: 55)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
                     .foregroundColor(Color(red: 1, green: 0.84, blue: 0.04))
                 }
-                .padding(.top, 15)
+                .padding(.top, 10)
                 
                 HStack {
                     NavigationLink(destination: ScheduleTaskView()) {
@@ -123,8 +123,8 @@ struct ContentView: View {
                         .padding(.vertical, 15)
                         
                     }
-                    .padding(.horizontal, 16)
-                    .frame(width: 190, height: 65)
+                    .padding(.horizontal, 8)
+                    .frame(width: 190, height: 55)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
@@ -145,14 +145,114 @@ struct ContentView: View {
                         .padding(.vertical, 15)
                         
                     }
-                    .padding(.horizontal, 16)
-                    .frame(width: 190, height: 65)
+                    .padding(.horizontal, 8)
+                    .frame(width: 190, height: 55)
                     .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
                     .contentShape(Rectangle())
                     .cornerRadius(12)
-                    .foregroundColor(Color(red: 1, green: 0.27, blue: 0.23))
+                    .foregroundColor(Color(red: 1, green: 0.20, blue: 0.20))
                 }
-                .padding(.vertical, 15)
+                .padding(.vertical, 10)
+                
+                VStack(alignment: .leading){
+                    Text("My Lists")
+                        .foregroundColor(Color(red: 0.55, green: 0.55, blue: 0.57))
+                        .font(.system(size: 16, weight: .thin))
+                        .padding(.top, 70)
+                    
+                    HStack {
+                        NavigationLink(destination: WorkView()) {
+                            HStack {
+                                Text("Work")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .fontWeight(.bold)
+                                
+                                Text(String(items.filter { $0.isScheduled() }.count))
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.white)
+                            }
+                            
+                            .padding(.vertical, 15)
+                            
+                        }
+                        .padding(.horizontal, 8)
+                        .frame(width: 190, height: 55)
+                        .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                        .contentShape(Rectangle())
+                        .cornerRadius(12)
+                        .foregroundColor(Color(red: 1, green: 0.76, blue: 0))
+                        
+                        NavigationLink(destination: OverdueView()) {
+                            HStack {
+                                Text("School")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .fontWeight(.bold)
+                                
+                                Text(String(items.filter { $0.isWork() }.count))
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.white)
+                            }
+                            
+                            .padding(.vertical, 15)
+                            
+                        }
+                        .padding(.horizontal, 8)
+                        .frame(width: 190, height: 55)
+                        .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                        .contentShape(Rectangle())
+                        .cornerRadius(12)
+                        .foregroundColor(Color(red: 0.66, green: 0.8, blue: 0))
+                    }
+                    .padding(.vertical, 10)
+                    HStack {
+                        NavigationLink(destination: ScheduleTaskView()) {
+                            HStack {
+                                Text("Shopping")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .fontWeight(.bold)
+                                
+                                Text(String(items.filter { $0.isScheduled() }.count))
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.white)
+                            }
+                            
+                            .padding(.vertical, 15)
+                            
+                        }
+                        .padding(.horizontal, 8)
+                        .frame(width: 190, height: 55)
+                        .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                        .contentShape(Rectangle())
+                        .cornerRadius(12)
+                        .foregroundColor(Color(red: 0.61, green: 0.31, blue: 0.87))
+                        
+                        NavigationLink(destination: OverdueView()) {
+                            HStack {
+                                Text("Social")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .fontWeight(.bold)
+                                
+                                Text(String(items.filter { $0.isOverdue() }.count))
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.white)
+                            }
+                            
+                            .padding(.vertical, 15)
+                            
+                        }
+                        .padding(.horizontal, 8)
+                        .frame(width: 190, height: 55)
+                        .background(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 0.50))
+                        .contentShape(Rectangle())
+                        .cornerRadius(12)
+                        .foregroundColor(Color(red: 0.61, green: 0.92, blue: 0.94))
+                    }
+                    
+                }
                 
                 Spacer()
             }

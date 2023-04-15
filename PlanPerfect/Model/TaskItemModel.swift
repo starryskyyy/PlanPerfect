@@ -45,4 +45,8 @@ extension TaskItem
     func isScheduled() -> Bool{
         return !isOverdue() && !isCompleted()
     }
+    
+    func isWork() -> Bool{
+        return category == "Work"
+    }
 }

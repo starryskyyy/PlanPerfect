@@ -29,7 +29,7 @@ struct ViewAllTasks: View {
         self.presentationMode.wrappedValue.dismiss()
     }) {
         HStack {
-            Image(systemName: "chevron.backward") // set image here
+            Image(systemName: "chevron.backward")
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(Color(red: 27/255, green: 209/255, blue: 161/255))
         }

@@ -80,8 +80,8 @@ struct BottomSheetView: View {
                         Text("").tag("")
                         Text("Work").tag("Work")
                         Text("School").tag("School")
-                        Text("Family").tag("Family")
-                        Text("Friends").tag("Friends")
+                        Text("Shopping").tag("Shopping")
+                        Text("Social").tag("Social")
                     }
                     .pickerStyle(MenuPickerStyle())
                     .foregroundColor(Color(red: 0.553, green: 0.553, blue: 0.573))
