@@ -2,7 +2,7 @@
 //  ShoppingView.swift
 //  PlanPerfect
 //
-//  Created by Danesh Zhao-Graham on 2023-04-15.
+//  Created by Elizaveta Vygovskaia on 2023-04-15.
 //
 
 import SwiftUI

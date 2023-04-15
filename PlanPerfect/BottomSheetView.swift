@@ -26,8 +26,6 @@ struct BottomSheetView: View {
            _selectedTaskItem = State(initialValue: passedTaskItem)
        }
 
-    
-    
     var body: some View {
         NavigationView {
             Form {
@@ -116,10 +114,7 @@ struct BottomSheetView: View {
                                 scheduleDate = item.scheduleDate
                                 category = item.category ?? ""
                             }
-                        }
-            
-            
-        }
+                        }        }
     }
 
     

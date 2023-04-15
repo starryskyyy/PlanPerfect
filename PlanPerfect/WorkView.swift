@@ -57,10 +57,10 @@ struct WorkView: View {
                                     selectedItem = item
                                     showingSheet.toggle()
                                 }
+                                
                                 .lineSpacing(22)
                                 .frame(width: 74, height: 44)
                                 .tint(Color(red: 0.33, green: 0.63, blue: 1))
-                                
                                 
                             }
                             .foregroundColor(Color.white)
