@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ScheduleTaskView: View {
     
+    @State private var deletionIndexSet: IndexSet?
+    @State private var showingAlert = false
+    
     @State var selectedItem: TaskItem?
     @State var showingSheet = false
     @Environment(\.managedObjectContext) private var viewContext
@@ -67,7 +70,18 @@ struct ScheduleTaskView: View {
                     }
                 }
                 .background(Color.black.edgesIgnoringSafeArea(.all))
-                
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text("Delete Item"),
+                        message: Text("Are you sure you want to delete?"),
+                        primaryButton: .destructive(Text("Delete")) {
+                            onDeleteConfirmed()
+                        },
+                        secondaryButton: .cancel(Text("Cancel")) {
+                            deletionIndexSet = nil
+                        }
+                    )
+                }
             }
             .listStyle(.plain) // Add this line to remove the default list style
             .foregroundColor(Color.white)
@@ -96,11 +110,19 @@ struct ScheduleTaskView: View {
     }
     
     private func deleteItems(offsets: IndexSet = IndexSet()) {
+        if offsets.isEmpty {
+            return
+        }
+        showingAlert = true
+        deletionIndexSet = offsets
+    }
+
+    private func onDeleteConfirmed() {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-            
+            deletionIndexSet?.map { items[$0] }.forEach(viewContext.delete)
             dateHolder.saveContext(viewContext)
         }
+        deletionIndexSet = nil
     }
   
 }
